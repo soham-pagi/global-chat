@@ -1,0 +1,77 @@
+h1 {
+    color: red;
+}
+
+.container {
+    /* width: 100%; */
+    height: 100%;
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.sent {
+    background: linear-gradient(rgb(0, 229, 255), rgba(0, 191, 255, 0.343)); 
+    text-align: right;
+    margin-left: auto;
+}
+
+.received {
+    background: linear-gradient(whitesmoke, rgb(201, 201, 201));
+}
+
+.msg-area {
+    margin-bottom: 100px;
+}
+
+.typing {
+    color: green;
+}
+
+#msg-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#msg {
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    height: 30px;
+}
+
+#submit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    height: 40px;
+    width: 60px;
+}
+
+#submit:hover {
+    background-color: #0056b3;
+}

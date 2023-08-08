@@ -4,9 +4,10 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 require("dotenv").config();
 
+app.use(express.static(__dirname + "/public"));
+
 app.get("/", (req, res) => {
-  //   res.send(`<h1>Hello World</h1>`);
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile("index.html");
 });
 
 io.on("connection", (socket) => {
@@ -14,16 +15,16 @@ io.on("connection", (socket) => {
   socket.emit("id", socket.id);
 
   socket.on("message", (data) => {
-    io.emit("message", { data, id: socket.id });
+    socket.broadcast.emit("message", { data, id: socket.id });
   });
 
   socket.on("typing", (data) => {
-    io.emit("typing", data.id);
+    socket.broadcast.emit("typing", data.id);
   });
 
   socket.on("disconnect", () => {
     console.log("A user disconnected");
-    io.emit("notice", socket.id);
+    socket.emit("notice", socket.id);
   });
 });
 
